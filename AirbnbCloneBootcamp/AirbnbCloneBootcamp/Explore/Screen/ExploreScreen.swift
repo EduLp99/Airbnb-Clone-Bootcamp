@@ -68,6 +68,22 @@ class ExploreScreen: UIView {
         collectionView.dataSource = dataSource
     }
     
+    lazy var lineView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .lightGray
+        return view
+    }()
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(DestinationTableViewCell.self, forCellReuseIdentifier: DestinationTableViewCell.identifier)
+        tableView.backgroundColor = .white
+        tableView.separatorStyle = .none
+        return tableView
+    }()
+    
     init() {
         super.init(frame: .zero)
         backgroundColor = .white
@@ -85,6 +101,8 @@ class ExploreScreen: UIView {
         searchBarView.addSubview(searchLabel)
         searchBarView.addSubview(searchDetailLabel)
         addSubview(collectionView)
+        addSubview(lineView)
+        addSubview(tableView)
     }
     
     func configConstraints() {
@@ -110,7 +128,24 @@ class ExploreScreen: UIView {
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.heightAnchor.constraint(equalToConstant: CategoryCollectionViewCell.height),
+            
+            lineView.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
+            lineView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            lineView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            lineView.heightAnchor.constraint(equalToConstant: 0.3),
+            
+            tableView.topAnchor.constraint(equalTo: lineView.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            
         ])
+    }
+    
+    func configTableViewProtocols(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+        tableView.delegate = delegate
+        tableView.dataSource = dataSource
     }
 }
 
