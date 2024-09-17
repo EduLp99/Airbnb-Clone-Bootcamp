@@ -134,6 +134,17 @@ class ExploreViewModel {
     
     private var categoryList: [TravelCategory] = []
     
+    func fetchCategoryListMock() {
+        ExploreService.loadJSON { result in
+            switch result {
+            case .success(let success):
+                categoryList = success
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }
+    }
+    
     var getSelectedCategoryIndex: Int {
       return categoryList.firstIndex(where: { $0.isSelected }) ?? 0
     }
