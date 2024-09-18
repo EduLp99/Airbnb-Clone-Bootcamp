@@ -20,10 +20,22 @@ class ExploreVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
         viewModel.fetchCategoryListMock()
-        screen?.configCollectionViewProtocols(delegate: self, dataSource: self)
         screen?.configTableViewProtocols(delegate: self, dataSource: self)
     }
+    
+}
+
+extension ExploreVC: ExploreViewModelProtocol {
+    func success() {
+        screen?.configCollectionViewProtocols(delegate: self, dataSource: self)
+    }
+    
+    func failure(errorMessage: String) {
+        print(errorMessage)
+    }
+    
     
 }
 

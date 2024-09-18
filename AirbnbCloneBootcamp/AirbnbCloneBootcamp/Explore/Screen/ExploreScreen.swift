@@ -66,6 +66,7 @@ class ExploreScreen: UIView {
     func configCollectionViewProtocols(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource) {
         collectionView.delegate = delegate
         collectionView.dataSource = dataSource
+        collectionView.reloadData()
     }
     
     lazy var lineView: UIView = {
