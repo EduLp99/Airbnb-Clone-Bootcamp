@@ -41,6 +41,10 @@
 		55CD56822C9CE68300E6A85E /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CD56752C9CE68300E6A85E /* Parameters.swift */; };
 		55CD56832C9CE68300E6A85E /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CD56772C9CE68300E6A85E /* RequestBuilder.swift */; };
 		55CD56852C9CE69200E6A85E /* place.json in Resources */ = {isa = PBXBuildFile; fileRef = 55CD56842C9CE69200E6A85E /* place.json */; };
+		55D706DE2CA20F6C008461EF /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D706D72CA20F6B008461EF /* LoginScreen.swift */; };
+		55D706DF2CA20F6C008461EF /* RegisterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D706D82CA20F6B008461EF /* RegisterButtonView.swift */; };
+		55D706E02CA20F6C008461EF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D706DA2CA20F6B008461EF /* LoginViewModel.swift */; };
+		55D706E12CA20F6C008461EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D706DC2CA20F6B008461EF /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +84,10 @@
 		55CD56752C9CE68300E6A85E /* Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		55CD56772C9CE68300E6A85E /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		55CD56842C9CE69200E6A85E /* place.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = place.json; sourceTree = "<group>"; };
+		55D706D72CA20F6B008461EF /* LoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		55D706D82CA20F6B008461EF /* RegisterButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterButtonView.swift; sourceTree = "<group>"; };
+		55D706DA2CA20F6B008461EF /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		55D706DC2CA20F6B008461EF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +120,7 @@
 		5524DFD02C61AC9200D0694B /* AirbnbCloneBootcamp */ = {
 			isa = PBXGroup;
 			children = (
+				55D706DD2CA20F6B008461EF /* Login */,
 				55CD56792C9CE68300E6A85E /* Service */,
 				558F20FA2C8A846E00986D4D /* Resource */,
 				5524DFE52C61B15400D0694B /* MainTabBarController */,
@@ -367,6 +376,33 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		55D706D92CA20F6B008461EF /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				55D706D72CA20F6B008461EF /* LoginScreen.swift */,
+				55D706D82CA20F6B008461EF /* RegisterButtonView.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		55D706DB2CA20F6B008461EF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				55D706DA2CA20F6B008461EF /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		55D706DD2CA20F6B008461EF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				55D706D92CA20F6B008461EF /* Screen */,
+				55D706DB2CA20F6B008461EF /* ViewModel */,
+				55D706DC2CA20F6B008461EF /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -441,6 +477,7 @@
 			files = (
 				55CD56812C9CE68300E6A85E /* NetworkLogger.swift in Sources */,
 				552A904E2C99402F00BC8A45 /* DestinationTableViewCell.swift in Sources */,
+				55D706E02CA20F6C008461EF /* LoginViewModel.swift in Sources */,
 				5524E0072C61B60100D0694B /* TravelScreen.swift in Sources */,
 				5524DFFE2C61B56F00D0694B /* ProfileVC.swift in Sources */,
 				5524DFFA2C61B55200D0694B /* TravelVC.swift in Sources */,
@@ -454,6 +491,7 @@
 				5524DFEC2C61B24100D0694B /* ExploreScreen.swift in Sources */,
 				55CD567A2C9CE68300E6A85E /* APIClient.swift in Sources */,
 				55CD567C2C9CE68300E6A85E /* APIRequest.swift in Sources */,
+				55D706DF2CA20F6C008461EF /* RegisterButtonView.swift in Sources */,
 				55CD56832C9CE68300E6A85E /* RequestBuilder.swift in Sources */,
 				552EE2F62C7D63A000400F58 /* ExploreViewModel.swift in Sources */,
 				55CD567D2C9CE68300E6A85E /* EmptyResponse.swift in Sources */,
@@ -467,8 +505,10 @@
 				552A904C2C993F5500BC8A45 /* PropertyDataModel.swift in Sources */,
 				5524DFF52C61B48D00D0694B /* FavoriteVC.swift in Sources */,
 				552EE2F32C7D5CB300400F58 /* CategoryCollectionViewCell.swift in Sources */,
+				55D706E12CA20F6C008461EF /* LoginViewController.swift in Sources */,
 				5524DFED2C61B24100D0694B /* ExploreVC.swift in Sources */,
 				55CD56822C9CE68300E6A85E /* Parameters.swift in Sources */,
+				55D706DE2CA20F6C008461EF /* LoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
